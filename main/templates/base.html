@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../static/style/generalStyle.css">
+    <link rel="stylesheet" href="../static/style/header-footer.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lkn6qbz.css">
+    {% block stylesheets %}{% endblock %}
+    <!-- social Media Tags -->
+    <meta property="og:title" content="Cams Wood"/>
+    <meta property="og:description" content="Cams Wood"/>
+    <meta property="og:image" content="https://codecrusher.ch/media/public/logo-bg-black.png"/>
+    <meta property="twitter:title" content="Cams Wood"/>
+    <meta property="twitter:description" content="Cams Wood"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="https://codecrusher.ch/media/public/logo-bg-black.png"/>
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <script src="../static/scripts/init.js"></script>
+</head>
+<body id="body">
+    <header>
+        <div>
+            Cams Wood
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a href="">Home</a>
+                <a href="">Bilder</a>
+                <a href="">Kontakt</a>
+            </div>
+            <div id="navbar-btn" onclick="toggleNavbar()" href="#">
+                <div id="btn-icon" class=""></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

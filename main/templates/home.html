@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="../static/style/home.css">
+{% endblock %}
+
+{% block title %}Cams Wood{% endblock %}
+
+{% block content %}
+<img class="hero-img" style="object-position: {{ page.img_position }};" src="{{ page.img.url }}" alt="{{ page.img_alt }}">
+<div class="top-text">
+<h2 class="page-title">{{ page.title }}</h2>
+</div>
+<div class="gallery">
+    <div class="wrapper">
+        {% for image in images %}
+            {% if image.img.width < image.img.height %}
+                <img onclick="openImg('{{ image.img.url }}')" class="row-span-2" src="{{ image.img.url }}" alt="{{ image.img_alt }}" style="object-position: {{ image.img_position }};">
+            {% else %}
+                <img onclick="openImg('{{ image.img.url }}')" src="{{ image.img.url }}" alt="{{ image.img_alt }}" style="object-position: {{ image.img_position }};">
+            {% endif %}    
+        {% endfor %}
+    </div>
+    <div id="image-container" class="image-container d-none">
+        <img onclick="closeImg()" class="close-cross" src="../../media/public/closeCross.svg" alt="close Cross">
+        <img id="detail-image" class="img-detail-view" src = "">
+    </div>
+</div>
+
+<div class="contact">
+    <h2>Kontakt</h2>
+    <div class="wrapper">
+        <div class="contact-info">
+            <div class="single-info">
+                <img src="../../media/public/icons/mail.svg" alt="">
+                <div><span>E-Mail: </span><a href="">cam@wood.ch</a></div>
+            </div>
+            <div class="single-info">
+                <img src="../../media/public/icons/phone.svg" alt="">
+                <div><span>Telefon: </span><a href="">079 993 45 72</a></div>
+            </div>
+        </div>
+        <div>
+            {% if submitted %}
+            <h3 class = "success">Vielen Dank für deine Nachricht. Ich habe sie erhalten und werde mich in Kürze bei dir melden.</h3>
+            {% else %}
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form_de.as_p}}
+                <button class="primary-button" type="submit">Absenden</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+:root{
+    --main-color: rgb(233, 213, 194);
+    --main-color-text: rgb(95, 57, 1);
+    --main-color-text-hover: #b34512;
+    --max-width: 1000px;
+}
+
+/* Scroll bar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #926e6e;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(95, 57, 1);
+    border-radius: 2px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b34512;
+  }
+
+body{
+    font-family: Helvetica, sans-serif, Arial;
+    margin: 0;
+}
+
+main{
+    margin-top: 0px;
+}
+
+.d-none{
+  display: none !important;
+}
+
+.noscroll{
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+}

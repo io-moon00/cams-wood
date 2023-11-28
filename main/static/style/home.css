@@ -1,0 +1,255 @@
+.page-title{
+    position: absolute;
+    left: calc(50% - 221.5px);
+    top: 100px;
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--main-color);
+    font-family: "artifex-hand-cf", sans-serif, Arial, Helvetica;
+}
+
+.wrapper{
+    max-width: var(--max-width);
+}
+
+.gallery .wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 300px;
+    gap: 20px;
+}
+
+.gallery .wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 175ms ease-in-out;
+}
+
+.gallery .wrapper img:hover{
+    transform: scale(1.03);
+    transition: all 175ms ease-in-out;
+}
+
+.gallery{
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+}
+
+.img-detail-view{
+    object-fit: contain;
+    max-width: calc(100vw - 100px);
+    max-height: calc(100vh - 100px);
+}
+
+.contact{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    background-color: var(--main-color);
+}
+
+.close-cross{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.contact .wrapper{
+    display: flex;
+    gap: 60px;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--main-color);
+    padding: 1em 0;
+}
+
+.single-info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.single-info img{
+    height: 30px;
+}
+
+.contact form{
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.contact button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    border: solid 2px var(--main-color-text);
+    padding: 6px 20px;
+    border-radius: 8px;
+    color: var(--main-color-text);
+    transition: all 175ms ease-in-out;
+}
+
+.contact button:hover{
+    cursor: pointer;
+    color: var(--main-color-text-hover);
+    border: solid 2px var(--main-color-text-hover);
+    transition: all 175ms ease-in-out;
+}
+
+.contact form p:not(:last-of-type){
+    align-items: center;
+}
+
+.contact form p{
+    display: flex;
+}
+
+.contact form label{
+    width: 100px;
+    display: flex;
+}
+
+.contact form input, .contact form textarea{
+    width: 300px;
+    opacity: 0.5;
+    padding: 6px;
+}
+
+.contact form select{
+    opacity: 0.5;
+    padding: 6px;
+}
+
+.contact a{
+    color: var(--main-color-text);
+    text-decoration: none;
+    transition: all 175ms ease-in-out;
+}
+
+.contact a:hover{
+    color: var(--main-color-text-hover);
+    transition: all 175ms ease-in-out;
+}
+
+.row-span-2{
+    grid-row: span 2;
+}
+
+@media (max-width: 900px){
+    .gallery .wrapper{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 780px){
+    .contact .wrapper{
+        flex-direction: column;
+    }
+
+    .contact-info{
+        align-items: center;
+    }
+}
+
+@media (max-width: 800px){
+
+    .image-container{
+        padding: 30px 0;
+    }
+    .img-detail-view{
+        max-width: 100%;
+        max-height: 100%;
+        box-sizing: border-box;
+    }
+
+    .close-cross{
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-height: 700px){
+
+    .image-container{
+        padding: 30px 0;
+    }
+    .img-detail-view{
+        max-width: 100%;
+        max-height: 100%;
+        box-sizing: border-box;
+    }
+
+    .close-cross{
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 650px){
+    .gallery .wrapper{
+        grid-auto-rows: 200px;
+    }
+}
+
+@media (max-width: 550px){
+    .gallery .wrapper{
+        grid-auto-rows: 150px;
+    }
+}
+
+
+@media(max-width: 520px){
+    .contact form input, .contact form textarea{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact{
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    .contact form p{
+        flex-direction: column;
+        width: 100%;
+        align-items: start;
+        justify-content: flex-start;
+        gap: 6px;
+    }
+    .contact form p:not(:last-of-type){
+        align-items: unset;
+    }
+
+    .contact .wrapper{
+        gap: 10px;
+    }
+}

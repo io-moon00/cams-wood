@@ -1,0 +1,21 @@
+header{
+  height: 100px;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+.hero-img{
+  width: calc(100vw - 4px);
+  overflow: hidden;  
+  height: 300px;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
