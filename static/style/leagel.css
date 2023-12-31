@@ -1,0 +1,21 @@
+.page-title{
+    font-size: 40px !important;
+    hyphens: auto;
+}
+
+.leagel{
+    padding: 10% 20%;
+}
+
+
+@media(max-width: 450px){
+    .leagel{
+        padding: 10% 5%;
+    }
+}
+
+@media(max-width: 310px){
+    .page-title{
+        font-size: 30px !important;
+    }
+}

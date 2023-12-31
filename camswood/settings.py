@@ -14,7 +14,7 @@ import os
 import json
 
 
-with open('config-wood.json') as config_file:
+with open('/etc/config-wood.json') as config_file:
     config = json.load(config_file)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,13 +28,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    '*'
+    '85.215.75.22',
+    'camswood.de'
 ]
 
-
+CSRF_TRUSTED_ORIGINS=['https://camswood.de']
 # Application definition
 
 INSTALLED_APPS = [
@@ -112,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de'
 
 TIME_ZONE = 'UTC'
 
@@ -127,7 +128,7 @@ USE_TZ = True
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')  
 MEDIA_URL = '/media/'
 
-STATIC_ROOT =  os.path.join(BASE_DIR, 'main', 'static')  
+STATIC_ROOT =  os.path.join(BASE_DIR, 'static')  
 STATIC_URL = '/static/'
 
 # Default primary key field type
@@ -135,8 +136,15 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DEFAULT_FROM_EMAIL = 'Kontaktformular Camswood <web-dev@codecrusher.ch>'  # Name unter dem die E-Mail verschickt wird und die dazugehörige E-Mail-Adresse
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # SMTP-Backend
+EMAIL_HOST = 'mail.infomaniak.com'
+EMAIL_PORT = 587 # oder 465 oder was immer der Port deines E-Mail-Providers ist
+EMAIL_USE_TLS = True  # Verbindung benutzt TLS-Verschlüsselung
+EMAIL_HOST_USER = config['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = config['EMAIL_HOST_PASSWORD']
 
 # Recaptcha
-RECAPTCHA_PUBLIC_KEY = '6LcfZIolAAAAANsnf9OHUNIJ0CQDiuFv16gLrs6r'
+RECAPTCHA_PUBLIC_KEY = '6LcddCMpAAAAABGfmxV6nwAkD-Z3IMV6LEer2C32'
 RECAPTCHA_PRIVATE_KEY = config['RECAPTCHA_PRIVATE_KEY']
 RECAPTCHA_REQUIRED_SCORE = 0.85

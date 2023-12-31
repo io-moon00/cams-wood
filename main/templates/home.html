@@ -6,18 +6,15 @@
 {% block title %}Cams Wood{% endblock %}
 
 {% block content %}
-<img class="hero-img" style="object-position: {{ page.img_position }};" src="{{ page.img.url }}" alt="{{ page.img_alt }}">
-<div class="top-text">
-<h2 class="page-title">{{ page.title }}</h2>
-</div>
+
+
 <div class="gallery">
     <div class="wrapper">
         {% for image in images %}
-            {% if image.img.width < image.img.height %}
-                <img onclick="openImg('{{ image.img.url }}')" class="row-span-2" src="{{ image.img.url }}" alt="{{ image.img_alt }}" style="object-position: {{ image.img_position }};">
-            {% else %}
+            <div class="img">
                 <img onclick="openImg('{{ image.img.url }}')" src="{{ image.img.url }}" alt="{{ image.img_alt }}" style="object-position: {{ image.img_position }};">
-            {% endif %}    
+                <span class="subtitle">{{ image.subtitle }}</span>
+            </div>
         {% endfor %}
     </div>
     <div id="image-container" class="image-container d-none">
@@ -26,17 +23,20 @@
     </div>
 </div>
 
-<div class="contact">
+<div id="contact" class="contact">
     <h2>Kontakt</h2>
     <div class="wrapper">
         <div class="contact-info">
             <div class="single-info">
                 <img src="../../media/public/icons/mail.svg" alt="">
-                <div><span>E-Mail: </span><a href="">cam@wood.ch</a></div>
+                <div><a href="mailto:sworks@hotmail.com">sworks@hotmail.com</a></div>
             </div>
             <div class="single-info">
                 <img src="../../media/public/icons/phone.svg" alt="">
-                <div><span>Telefon: </span><a href="">079 993 45 72</a></div>
+                <div class="phonenr">
+                    <a href="+4917673838168">+49 176 738 381 68 (DE)</a>
+                    <a href="+41791278886">+41 79 127 88 86 (CH)</a>
+                </div>
             </div>
         </div>
         <div>

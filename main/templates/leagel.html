@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load markdown_extras %}
+{% block stylesheets %}
+<link rel="stylesheet" href="../static/style/leagel.css">
+{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+
+<div class="leagel">
+    {{ page.text | convert_markdown | safe }}
+</div>
+
+
+{% endblock %}

@@ -1,11 +1,20 @@
 .page-title{
     position: absolute;
-    left: calc(50% - 221.5px);
     top: 100px;
     font-size: 80px;
     font-weight: 700;
     color: var(--main-color);
     font-family: "artifex-hand-cf", sans-serif, Arial, Helvetica;
+
+}
+
+.top-text{
+    height: 300px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
 }
 
 .wrapper{
@@ -164,6 +173,19 @@
     grid-row: span 2;
 }
 
+.phones{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.phonenr{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
 @media (max-width: 900px){
     .gallery .wrapper{
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -218,12 +240,16 @@
     .gallery .wrapper{
         grid-auto-rows: 200px;
     }
+    .gallery{
+        padding: 40px 20px;
+    }
 }
 
 @media (max-width: 550px){
     .gallery .wrapper{
         grid-auto-rows: 150px;
     }
+
 }
 
 
@@ -251,5 +277,39 @@
 
     .contact .wrapper{
         gap: 10px;
+    }
+
+    .page-title{
+        font-size: 60px;
+    }
+
+}
+
+@media(max-width: 450px){
+    .page-title{
+        flex-wrap: wrap;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .contact{
+        padding: 40px 20px;
+    }
+}
+
+@media(max-width: 400px){
+    .gallery .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 340px){
+    .single-info{
+        flex-direction: column;
+    }
+
+    .contact-info{
+        gap: 40px;
     }
 }

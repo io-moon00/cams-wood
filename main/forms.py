@@ -3,6 +3,7 @@ from django_recaptcha.fields import ReCaptchaField
 from django_recaptcha.widgets import ReCaptchaV3
 
 class ContactForm_de(forms.Form):
+    required_css_class = 'required'
     SALUTATION = [
         ('mr', 'Herr'),
         ('mrs', 'Frau'),
