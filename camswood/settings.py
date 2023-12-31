@@ -14,7 +14,7 @@ import os
 import json
 
 
-with open('/etc/config-wood.json') as config_file:
+with open('/etc/wood_config.json') as config_file:
     config = json.load(config_file)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +31,7 @@ SECRET_KEY = config['SECRET_KEY']
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '85.215.75.22',
+    '82.165.79.181',
     'camswood.de'
 ]
 
